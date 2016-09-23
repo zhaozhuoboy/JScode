@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <img id='tu' src="images/1.jpg" alt="" width='300' height='300'><br />
+  <select id="sel" onchange="test(this)">
+    <option value="images/1.jpg">1</option>
+    <option value="images/2.jpg">2</option>
+    <option value="images/3.jpg">3</option>
+    <option value="images/4.jpg">4</option>
+  </select>
+  <script>
+    function test(obj){
+      let tu = document.getElementById('tu')
+      let index =obj.selectedIndex
+      tu.src= obj.options[index].value
+    }
+  </script>
+</body>
+</html>
