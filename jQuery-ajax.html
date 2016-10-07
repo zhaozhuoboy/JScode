@@ -11,9 +11,11 @@
     <script type="text/javascript">
        var data =  $.ajax({
             type:'get',
-            url:"https://api.github.com/users/zhaozhuoboy",
+            dataType:'json',
+            url:"http://localhost:3000/posts",
             success:function(res){
-               
+               // console.log(res)
+               return res;
             
             },
             complete:function(){

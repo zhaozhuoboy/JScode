@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>深度克隆</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var oPerson={
+		    oName:"zhaozhuo",
+		    oAge:"22",
+		    oAddress:{
+		        province:"beijing"
+		    },
+		    skill:function(){
+		        console.log("bob is coding");
+		    }
+		};
+
+		var arr =[1,2,3,66]
+		function clone(obj){
+			var result = null;
+			if(obj instanceof Array){
+				result = [];
+			}else if(typeof(obj) == Object){
+				result = {}
+			}
+		    for(key in obj){
+		        result[key]=obj[key];
+		    }
+		    return result;
+		}
+
+
+		var newOop = clone(arr);
+		newOop[1]=6666;
+		console.log(newOop);
+		console.log(arr);
+		//console.log(oPerson.oName);//zhaozhuo
+		// newOop.oName = 'tiankangning';
+		// console.log(oPerson.oName);//?
+		// console.log(newOop.oName)
+		// console.log(oPerson === newOop)
+		
+		
+	</script>
+</body>
+</html>
