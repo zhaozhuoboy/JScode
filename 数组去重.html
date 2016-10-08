@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>数组去重</title>
+</head>
+<body>
+    <script>
+        function quchong(arr){
+          var res = [arr[0]];
+          for(var i = 0;i<arr.length;i++){
+            var repeat = false;
+            for(var j=0;j<res.length;j++){
+              if(arr[i] == res[j]){
+                repeat = true;
+                break;
+              }
+            }
+            if(!repeat){
+              res.push(arr[i])
+            }
+          }
+          return res;
+        }
+
+      //  function quchong(arr){
+      //    var res = [];
+      //    res[0] = arr[0];
+      //    for(var i = 1; i < arr.length; i++){
+      //     var repeat = false;
+      //     for(var j = 0; j < res.length; j++){
+      //        if(arr[i] == res[j]){
+      //           repeat = true;
+      //           break;
+      //        }
+      //     }
+      //       if(!repeat){
+      //        res.push(arr[i]);
+      //       }
+      //    }
+      //    return res;
+      //   }
+
+        var arr=[1,2,3,1,2,3,4,4];
+
+        console.log(quchong(arr));
+    </script>
+</body>
+</html>

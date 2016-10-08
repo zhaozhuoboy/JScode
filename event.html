@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>event</title>
+</head>
+<body>
+    <div id="content"></div>
+    <script>
+        
+        var txt='';
+        window.onkeypress=function(e){
+            var content = document.getElementById('content');
+            console.log(e)
+            txt = String.fromCharCode(e.charCode);
+            content.innerHTML = txt;
+        }
+  
+        var arr2 = [4,5,6];
+        var str = 'zhao,zhuo,ni,hao'
+        document.getElementById('content').innerHTML=str.sub()+'aa';
+    </script>
+</body>
+</html>
