@@ -6,23 +6,26 @@
     <script type="text/javascript" src='lib/jquery-3.1.1.js'></script>
 </head>
 <body>
-
+    <div class="username"></div>
+    <p class="desc"></p>
     <img src="" alt="">
     <script type="text/javascript">
-       var data =  $.ajax({
+    var data={};
+       $.ajax({
             type:'get',
             dataType:'json',
-            url:"http://localhost:3000/posts",
+            url:"https://api.github.com/users/zhaozhuoboy",
             success:function(res){
-               // console.log(res)
-               return res;
-            
+
+                console.log(res);
             },
-            complete:function(){
-                console.log('1111')
+            complete:function(res){
+
             }
         })
-       console.log(data)
+
+
+
     </script>
 </body>
 </html>
