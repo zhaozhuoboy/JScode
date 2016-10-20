@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>阻止默认行为</title>
+    <script type="text/javascript" src='lib/jquery-3.1.1.js'></script>
+</head>
+<body>
+   
+    <a href="http://www.baidu.com" id="link">link</a>
+    <script type="text/javascript">
+        
+        $('#link').click(function(event){
+            
+            if(event && event.preventDefault){
+                event.preventDefault();
+            }else{
+                window.event.returnValue = false;
+            }
+
+        })
+
+        
+    </script>
+</body>
+</html>

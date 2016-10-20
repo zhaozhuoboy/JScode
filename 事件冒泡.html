@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件冒泡</title>
+    <style type="text/css">
+        #out{width:400px;height:400px;background-color: red;}
+        #mid{width: 200px;height: 200px;background-color: blue;}
+        #inner {width: 50px;height: 50px;background-color: teal;}
+    </style>
+</head>
+<body>
+    <div id='out'>
+        <div id="mid">
+            <div id="inner"></div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        var out = document.getElementById('out')
+        var mid = document.getElementById('mid')
+        var inner = document.getElementById('inner')
+        out.onclick=function(e){
+
+           
+            alert('out')
+        }
+        mid.onclick=function(e){
+          
+            alert('mid')
+        }
+        inner.onclick=function(e){
+            var evt = e? e : window.event;
+            console.log(evt)
+            evt.cancelBubble = true;
+            alert('inner')
+        }
+
+      /*
+
+      参考：http://caibaojian.com/javascript-stoppropagation-preventdefault.html
+       stopPropagation也是事件对象(Event)方法，作用是阻止目标元素的冒泡事件，但是会不阻止默认行为。
+       w3c的方法是e.stopPropagation()，IE则是使用e.cancelBubble = true
+       
+
+
+       */
+
+       
+    </script>
+</body>
+</html>

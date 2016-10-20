@@ -8,6 +8,8 @@
 </head>
 <body>
     <script>
+    
+        //用JS实现一个数组合并的方法（要求去重）。
         function quchong(arr){
           var res = [arr[0]];
           for(var i = 0;i<arr.length;i++){
@@ -24,28 +26,17 @@
           }
           return res;
         }
+       function newarr(arr1,arr2){  //接收两个数组，合并之后调用数组去重方法返回  去重之后的结果
+        var result =[];
+        result= result.concat(arr1,arr2);
+        console.log(quchong(result))
+        
+       }
+       var a1 =['zh','zhuo'];
+       var a2 =['zh','ou'];
+       newarr(a1,a2)
 
-      //  function quchong(arr){
-      //    var res = [];
-      //    res[0] = arr[0];
-      //    for(var i = 1; i < arr.length; i++){
-      //     var repeat = false;
-      //     for(var j = 0; j < res.length; j++){
-      //        if(arr[i] == res[j]){
-      //           repeat = true;
-      //           break;
-      //        }
-      //     }
-      //       if(!repeat){
-      //        res.push(arr[i]);
-      //       }
-      //    }
-      //    return res;
-      //   }
 
-        var arr=[1,2,3,1,2,3,4,4];
-
-        console.log(quchong(arr));
     </script>
 </body>
 </html>
