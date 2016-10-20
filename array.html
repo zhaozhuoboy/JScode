@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>array</title>
+</head>
+<body>
+  <script>
+    var arr = [6,2,1,4,5];
+    // console.log(arr.push(6));  //向数组末尾插入一个元素，返回新数组的长度
+    // console.log(arr.pop());   //删除数组最后一个元素，并返回该元素
+    // console.log(arr.shift());    //删除数组的第一个元素，并返回该元素
+    // console.log(arr.unshift(9));   //将指定元素插到数组开始位置 并返回新长度
+    console.log(arr.sort());//排序从小到大
+    var x =1 ,y=z=0;
+    function add(n){
+      n = n + 1;
+    }
+    y=add(x);
+    function add(n){
+      n = n + 3;
+    }
+    z=add(x)
+    console.log(x,y,z);
+
+    console.log(sessionStorage);
+
+    sessionStorage.setItem('key',"hahah")
+    alert(sessionStorage.getItem('key'))
+
+  </script>
+</body>
+</html>
