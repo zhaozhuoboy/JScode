@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>程序题</title>
+</head>
+<body>
+    <input type="range">
+    <script>
+    //编写一段JS脚本,实现一个完整的函数，将下划线命名的字符串改为驼峰命名，比如传入"qin_huang_dao"返回为qinHuangDao
+        function reName(str){
+            var a = str.split('_')
+            console.log(a)
+            for (var i =1;i<a.length;i++){
+                a[i]=a[i].charAt(0).toUpperCase()+a[i].substring(1)
+            }
+            return a.join("")
+        }
+       // reName("qin_huang_dao")
+
+       var str= '找aaa';
+
+       function getByte(str){
+        var byte = str.length;
+        for (var i =0 ;i <str.length;i++){
+            if(str[i].charCodeAt(i) > 255){
+                byte++;
+            }
+        }
+        return byte;
+       }
+       console.log(getByte(str))
+       var XHR = window.XMLHttpRequest;
+       
+    
+     //将如下字符串转变成json对象
+     // var str="{a:1,b:2,c:true,d:'hello'}";
+
+       function toObj(str){
+        str= str.substring(1,str.length-1);
+        var arr = str.split(',')
+        var obj={};
+        for(var i = 0;i<arr.length-1;i++){
+            var key = arr[i].split(':');
+            for(var j = 0;j<key.length-1;j++){
+               // console.log(key[j])
+                obj[key[j]] = key[j+1]
+            }
+        }
+        return obj;
+       }
+       var str="{a:1,b:2,c:true,d:'hello'}";
+      console.log(toObj(str))
+
+
+     for(var i = 0 ;i<5;++i){
+        console.log(i)
+     }
+    </script>
+</body>
+</html>
