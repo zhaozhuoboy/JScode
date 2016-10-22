@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ajax</title>
+</head>
+<body>
+
+    <input type="button" value='获取' id="btn">
+    <script type="text/javascript">
+
+        
+        var btn = document.getElementById('btn');
+        btn.onclick=function(){
+            var xhr;
+          if(window.XMLHttpRequest){
+            xhr = new XMLHttpRequest();
+          }else{
+            xhr = new ActiveXObject('"Microsoft.XMLHTTP"');
+          }
+          console.log(xhr);
+          xhr.open('GET','https://api.github.com/users/zhaozhuoboy?='+Math.random(),true);
+          xhr.send();
+          
+          xhr.onreadystatechange=function(){//如果async = true   异步请求时候 就要在  onreadystatechange这个 方法触发的时候 进行下一步的操作
+            if(xhr.readyState == 4 && xhr.statusText == 'OK'){
+                console.log(xhr.readyState)
+                console.log('成功获取')
+            }
+          }
+        }
+
+        /*每当 readyState 改变时，就会触发 onreadystatechange 事件。
+        readyState 有5个状态值 
+                 0: 请求未初始化 
+                 1: 服务器连接已建立
+                 2: 请求已接收
+                 3: 请求处理中
+                 4: 请求已完成，且响应已就绪
+
+        在 onreadystatechange 事件中，我们规定当服务器响应已做好被处理的准备时所执行的任务。
+        当 readyState 等于 4 且状态为 200 时，表示响应已就绪
+
+        POST请求
+
+            如果需要像 HTML 表单那样 POST 数据，请使用 setRequestHeader() 来添加 HTTP 头。然后在 send() 方法中规定您希望发送的数据：
+
+            xhr.open("POST","ajax_test.html",true);
+            xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+            xhr.send("fname=Henry&lname=Ford");
+
+
+        */
+          
+    </script>
+</body>
+</html>
