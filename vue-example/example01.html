@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue-demo1</title>
+    <script type="text/javascript" src="../lib/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <p v-if='flag'>hello</p>
+    </div>
+    <div id="app2">
+        <input v-model='text'>
+        <span>数据{{{ text }}}</span>
+    </div>
+    <script type="text/javascript">
+        new Vue({
+            el:"#app",
+            data:{
+                flag:true
+            }
+        })
+        var app2 = new Vue({
+            el:"#app2",
+            data:{
+                text:""
+            }
+        })
+        app2.$watch('text',function(){
+            console.log('text改变了')
+            //  这个回调将在 `vm.text`  改变后调用
+        })
+    </script>
+</body>
+</html>
