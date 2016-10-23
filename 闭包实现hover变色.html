@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>闭包</title>
+</head>
+<body>
+    <ul>
+        <li>香蕉</li>
+        <li>句子</li>
+        <li>苹果</li>
+        <li>西瓜</li>
+    </ul>
+
+
+    <script type="text/javascript">
+        
+        var lis = document.getElementsByTagName('li');
+       
+        for(var i = 0 ;i< lis.length;i++){
+            lis[i].onmouseover = over(lis[i]);
+            lis[i].onmouseout = out(lis[i]);
+        }
+
+        function over(obj){
+            function f2(){
+                obj.style.backgroundColor = 'pink';
+            }
+            return f2;
+        }
+        function out(obj){
+            function f2(){
+                obj.style.backgroundColor = '';
+            }
+            return f2;
+        }
+    </script>
+</body>
+</html>
