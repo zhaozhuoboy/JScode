@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        div{
+            width: 0;
+            height: 0;
+            border-width:30px;
+            border-style:solid;
+            border-color: transparent;
+            border-top-color:red;
+            /*
+                原理：盒子宽高都为0   设置边框的宽度也就是三角形的大小；
+                      设置边框的样式 solid   再将边框的颜色都设置为透明；
+
+                      最后需要哪个方向的三角形 就把该方向的颜色 设置为别的颜色border-top-color
+            */
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>

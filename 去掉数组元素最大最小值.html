@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+        arr = [2,34,5,6,2,3,2]
+        Array.prototype.reMaxMin=function(){
+            this.sort();
+            var max= min = this[0];
+            
+            for(var i =1;i<this.length;i++){
+                if(this[i] > max){
+                    max=this[i];
+                }
+                if(this[i]< min){
+                    min = this[i]
+                }
+            }
+            console.log(max,min)
+        }
+        arr.reMaxMin()
+    </script>
+</body>
+</html>
