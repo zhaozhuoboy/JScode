@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="lib/jquery-3.1.1.js" charset="utf-8"></script>
+</head>
+<body>
+  <input type="button" value='getJSON' id="btn" />
+  <script>
+      jQuery jsonp回调函数解决跨域问题
+      // $.getJSON('http://www.runoob.com/try/ajax/jsonp.php?jsoncallback=?',function(res){
+      //   console.log(res);
+      // })
+
+
+
+      //原生js 利用jsonp 动态插入script标签解决跨域问题
+      function callback(data){
+        console.log(data);
+      }
+      var btn = document.getElementById('btn');
+      btn.onclick=function(){
+        var script = document.createElement('script');
+        script.src='http://www.runoob.com/try/ajax/jsonp.php?jsoncallback=callback';
+        document.getElementsByTagName('body')[0].appendChild(script);
+      }
+
+
+
+
+  </script>
+</body>
+</html>

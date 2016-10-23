@@ -22,7 +22,9 @@
           xhr.open('GET','https://api.github.com/users/zhaozhuoboy?='+Math.random(),true);
 
 
-          xhr.onreadystatechange=function(){//如果async = true   异步请求时候 就要在  onreadystatechange这个 方法触发的时候 进行下一步的操作
+          xhr.onreadystatechange=function(){
+            console.log(xhr.readyState)
+            //如果async = true   异步请求时候 就要在  onreadystatechange这个 方法触发的时候 进行下一步的操作
             if(xhr.readyState == 4 && xhr.statusText == 'OK'){
                 // console.log(xhr)
                 var data = xhr.responseText;
@@ -40,7 +42,7 @@
                 JSON.parse(jsonstr); //可以将json字符串转换成json对象
                 JSON.stringify(jsonobj); //可以将json对象转换成json对符串
 
-                注：ie8(兼容模式),ie7和ie6没有JSON对象，推荐采用JSON官方的方式，引入json.js。 
+                注：ie8(兼容模式),ie7和ie6没有JSON对象，推荐采用JSON官方的方式，引入json.js。
                 */
                 console.log('成功获取')
             }
