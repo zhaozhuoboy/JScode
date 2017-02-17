@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <button id='creatbtn'>aaaa</button>
+    <script type="text/javascript">
+        
+    window.onload =function () {
+        var body = document.getElementsByTagName('body')[0]
+            var div1 = document.createElement('div');
+            div1.id='box';
+            div1.style.width=200 +'px';
+            div1.style.height =200+'px';
+            div1.style.backgroundColor='red';
+            body.appendChild(div1);
+   
+        var btn = document.getElementById("creatbtn");
+
+        btn.onclick =function() {
+            var div2 = document.createElement('div');
+            div2.style.width=100 +'px';
+            div2.style.height =100+'px';
+            div2.style.backgroundColor='teal';
+            var box = document.getElementById('box')
+            var body = document.getElementsByTagName('body')[0]
+            box.insertBefore(div2)
+
+        }
+        }
+    
+    </script>
+</body>
+</html>
