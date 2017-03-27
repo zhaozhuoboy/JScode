@@ -32,12 +32,14 @@
         })
         touch.on('.touchBox','pinchout',function(event){
             //放大
-            $(this).children().css({'transform': scale(event.scale)})
+            $.each($(this).children(),function(index,item){
+                $('body').append('<p>'+ index +'<span>'+ item +'</span></p>')
+            })
             $('p').text(event.scale)
         })
         touch.on('.touchBox','pinchin',function(event){
             //收缩
-            $(this).children().css({'transform': scale(event.scale)})
+            $('body').append('<p>'+ index +'<span>'+ item +'</span></p>')
             $('p').text(event.scale)
         })
     </script>
