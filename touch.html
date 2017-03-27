@@ -12,6 +12,7 @@
             width: 100%;
             height: 300px;
             background: #ccc;
+
         }
         .box{width: 50px;height: 40px;border:1px solid red;}
         .div2{width:60px;height:50px;position: relative;left: 200px;top:40px;border:1px solid;}
@@ -30,22 +31,27 @@
             $('p').text(event.direction)
         })
         touch.on('.touchBox','tap',function(event){
-           console.log(event.type)
-           $.each($(this).children(),function(index,item){
-               console.log(item)
+           $(this).children().each(function(index,item){
+               console.log(index);
+               $(item).css({'width': item.offsetWidth*event.scale})
             })
         })
         touch.on('.touchBox','pinchout',function(event){
             //放大
             $(this).children().each(function(index,item){
-               $('p').text(index) 
+                $(item).css({
+                             'width': item.offsetWidth*event.scale,
+                             'height':item.offsetHeight*event.scale
+                             })
             })
             
         })
         touch.on('.touchBox','pinchin',function(event){
             //收缩
             $(this).children().each(function(index,item){
-               $('p').text(index) 
+               $(item).css({'width': item.offsetWidth*event.scale,
+                            'height':item.offsetHeight*event.scale
+                            })
             })
         })
     </script>
