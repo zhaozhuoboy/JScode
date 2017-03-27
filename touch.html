@@ -13,10 +13,13 @@
             height: 300px;
             background: #ccc;
         }
+        .box{width: 50px;height: 40px;border:1px solid red;}
     </style>
 </head>
 <body>
-    <div class="touchBox"></div>
+    <div class="touchBox">
+        <div class="box">文字文字</div>
+    </div>
     <div>
         <p></p>
     </div>
@@ -28,6 +31,11 @@
            console.log(event.type)
         })
         touch.on('.touchBox','pinchout',function(event){
+            //放大
+            $('p').text(event.scale)
+        })
+        touch.on('.touchBox','pinchin',function(event){
+            //收缩
             $('p').text(event.scale)
         })
     </script>
