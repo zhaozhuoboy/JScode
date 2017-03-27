@@ -35,17 +35,16 @@
         })
         touch.on('.touchBox','pinchout',function(event){
             //放大
-            $.each($(this).children(),function(index,item){
-                $(item).css({transform:scale(event.scale)})
+            $(this).children().each(function(index,item){
+               $('p').text(index) 
             })
-            $('p').text(event.scale)
+            
         })
         touch.on('.touchBox','pinchin',function(event){
             //收缩
-            $.each($(this).children(),function(index,item){
-                $(item).css({transform:scale(event.scale)})
+            $(this).children().each(function(index,item){
+               $('p').text(index) 
             })
-            $('p').text(event.scale)
         })
     </script>
 </body>
