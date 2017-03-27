@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <script type="text/javascript" src="lib/jquery-3.1.1.js"></script>
+    <script type="text/javascript" src='lib/touch.min.js'></script>
+    <style>
+        *{margin: 0;padding: 0;}
+        .touchBox{
+            width: 100%;
+            height: 300px;
+            background: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div class="touchBox"></div>
+    <div>
+        <p></p>
+    </div>
+    <script type="text/javascript">
+        touch.on('.touchBox','swiping',function(event){
+            $('p').text(event.direction)
+        })
+        touch.on('.touchBox','tap',function(event){
+           console.log(event.type)
+        })
+        touch.on('.touchBox','pinchout',function(event){
+            $('p').text(event)
+        })
+    </script>
+</body>
+</html>
