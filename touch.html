@@ -29,17 +29,21 @@
         })
         touch.on('.touchBox','tap',function(event){
            console.log(event.type)
+           $.each($(this).children(),function(index,item){
+               console.log(item)
+            })
         })
         touch.on('.touchBox','pinchout',function(event){
             //放大
             $.each($(this).children(),function(index,item){
-                $('body').append('<p>'+ index +'<span>'+ item +'</span></p>')
+               // $(item).css({transform:scale(event.scale)})
+               item.scale(event.scale)
             })
             $('p').text(event.scale)
         })
         touch.on('.touchBox','pinchin',function(event){
             //收缩
-            $('body').append('<p>'+ index +'<span>'+ item +'</span></p>')
+             $(item).css({transform:scale(event.scale)})
             $('p').text(event.scale)
         })
     </script>
