@@ -44,7 +44,12 @@
             }
             document.onmousemove=function(event){
                 if(mouseDown){
-                    box.style.left = parseInt(objX) + parseInt(event.clientX) - parseInt(mouseX) + "px";
+                    if(box.offsetLeft = 0){
+                        box.style.left = 0 + "px";
+                    }else if(box.offsetLeft + selfWidth > window.clientWidth){
+                        box.style.left = parseInt(objX) + parseInt(event.clientX) - parseInt(mouseX) + "px";
+                    }
+                    
                     box.style.top = parseInt(objY) + parseInt(event.clientY) - parseInt(mouseY) + "px";
                 }
                 console.log(box.offsetLeft)
