@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="lib/jquery-3.1.1.js"></script>
+</head>
+<body>
+    <iframe src="jquery绑定事件.html" frameborder="0" id="iframe"></iframe>
+    <script type="text/javascript">
+        
+        $('#iframe').load(function(){
+            console.log('变了')
+        })
+    </script>
+</body>
+</html>

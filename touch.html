@@ -26,6 +26,7 @@
     <div>
         <p></p>
     </div>
+    <iframe id="test"  src="" frameborder="0"></iframe>
     <script type="text/javascript">
         touch.on('.touchBox','swiping',function(event){
             $('p').text(event.direction)
@@ -54,6 +55,8 @@
                             })
             })
         })
+        var iframe = document.getElementById('test');
+        console.log(iframe.contentWindow)
     </script>
 </body>
 </html>
